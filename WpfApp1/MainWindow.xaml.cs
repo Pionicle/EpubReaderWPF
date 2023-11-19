@@ -254,7 +254,7 @@ namespace WpfApp1
         }
 
         // обновление обложек
-        public void UpdateGrid()
+        private void UpdateGrid()
         {
             grid1.Children.Clear();
 
@@ -304,7 +304,7 @@ namespace WpfApp1
         }
 
         // чтение последнего id из библиотеки
-        public int readLastId()
+        private int readLastId()
         {
             int id = 0;
             if (books.Count != 0)
@@ -324,7 +324,6 @@ namespace WpfApp1
 
             if (result == true)
             {
-                // Получите путь к выбранному файлу
                 string filePath = openFileDialog.FileName;
 
                 foreach (Book checkBook in books)

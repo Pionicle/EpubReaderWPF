@@ -23,9 +23,9 @@
                      Width="Auto" Height="Auto" Background="#FFF6ECDA" IsReadOnly="True"
                      VerticalScrollBarVisibility="Auto" Loaded="richtextbox1_Loaded"
                      PreviewMouseRightButtonDown="richtextbox1_PreviewMouseRightButtonDown">
-            <FlowDocument x:Name="document1">
-                <!-- Мое содержимое RichTextBox -->
-            </FlowDocument>
+            
+            <FlowDocument x:Name="document1"/>
+            
             <RichTextBox.ContextMenu>
                 <ContextMenu>
                     <MenuItem Header="Размер текста">
@@ -41,6 +41,8 @@
                     </MenuItem>
                 </ContextMenu>
             </RichTextBox.ContextMenu>
+            
         </RichTextBox>
     </Grid>
+    
 </Window>

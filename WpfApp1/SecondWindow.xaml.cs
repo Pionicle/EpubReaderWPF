@@ -24,7 +24,7 @@ namespace WpfApp1
         EpubBook book;
         Book currentBook = new Book();
         SettingsApp settingsApp;
-        private Button selectedButton;
+        Button selectedButton;
 
         // создание окна
         public SecondWindow(Book book1)
@@ -155,10 +155,10 @@ namespace WpfApp1
             richtextbox1.Height = newHeight;
             richtextbox1.Width = newHeight / 1.38;
             MinWidth = richtextbox1.Width + treeview1.Width + 20;
-        }        
+        }
 
         // загрузка всех глав книг
-        void PrintTableOfContents()
+        private void PrintTableOfContents()
         {
             foreach (EpubNavigationItem navigationItem in book.Navigation)
             {                                                
@@ -166,9 +166,9 @@ namespace WpfApp1
             }
             SelectedPage();
         }
-        
+
         // загрузка оглавления в виде кнопок 
-        void PrintNavigationItem(EpubNavigationItem navigationItem)
+        private void PrintNavigationItem(EpubNavigationItem navigationItem)
         {
             void Button_Click(object sender, RoutedEventArgs e)
             {
@@ -240,7 +240,7 @@ namespace WpfApp1
         }
 
         // показ текста
-        string PrintChapter(string currentFilePath)
+        private string PrintChapter(string currentFilePath)
         {
             string result = "";
             foreach (EpubLocalTextContentFile textContentFile in book.ReadingOrder)
@@ -251,7 +251,7 @@ namespace WpfApp1
         }
         
         // показ текста главы
-        string PrintTextContentFile(EpubLocalTextContentFile textContentFile, string currentFilePath)
+        private string PrintTextContentFile(EpubLocalTextContentFile textContentFile, string currentFilePath)
         {
             if (textContentFile.FilePath != currentFilePath)
                 return "";
